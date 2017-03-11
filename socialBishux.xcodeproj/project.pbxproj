@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A45369A71E73FD9300FF72E7 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45369A61E73FD9300FF72E7 /* FeedVC.swift */; };
 		A4C90D811E72C825004A9445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C90D801E72C825004A9445 /* AppDelegate.swift */; };
 		A4C90D831E72C825004A9445 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C90D821E72C825004A9445 /* SignInVC.swift */; };
 		A4C90D861E72C825004A9445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C90D841E72C825004A9445 /* Main.storyboard */; };
@@ -23,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		0C6B87718D17A791DB079C5D /* Pods_socialBishux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialBishux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A45369A51E73F97E00FF72E7 /* socialBishux.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = socialBishux.entitlements; sourceTree = "<group>"; };
+		A45369A61E73FD9300FF72E7 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		A4C90D7D1E72C825004A9445 /* socialBishux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = socialBishux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C90D801E72C825004A9445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4C90D821E72C825004A9445 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 		A4C90D7F1E72C825004A9445 /* socialBishux */ = {
 			isa = PBXGroup;
 			children = (
+				A45369A51E73F97E00FF72E7 /* socialBishux.entitlements */,
 				A4C90D991E73D007004A9445 /* Util */,
 				A4C90D961E72CACE004A9445 /* Controller */,
 				A4C90D951E72CAC9004A9445 /* View */,
@@ -109,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				A4C90D821E72C825004A9445 /* SignInVC.swift */,
+				A45369A61E73FD9300FF72E7 /* FeedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -175,6 +180,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = E84FFPF9H3;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -267,6 +277,7 @@
 				A4C90D831E72C825004A9445 /* SignInVC.swift in Sources */,
 				A4C90D811E72C825004A9445 /* AppDelegate.swift in Sources */,
 				A4C90D981E73CF53004A9445 /* FancyView.swift in Sources */,
+				A45369A71E73FD9300FF72E7 /* FeedVC.swift in Sources */,
 				A4C90DA11E73D800004A9445 /* FancyButtonRound.swift in Sources */,
 				A4C90D9B1E73D020004A9445 /* Constants.swift in Sources */,
 				A4C90D9D1E73D2CC004A9445 /* FancyButton.swift in Sources */,
@@ -391,6 +402,7 @@
 			baseConfigurationReference = C86C14C5FA1BA954247A6266 /* Pods-socialBishux.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = socialBishux/socialBishux.entitlements;
 				DEVELOPMENT_TEAM = E84FFPF9H3;
 				INFOPLIST_FILE = socialBishux/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -405,6 +417,7 @@
 			baseConfigurationReference = E9B19B6CD3DCA7BFCA26F4B5 /* Pods-socialBishux.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = socialBishux/socialBishux.entitlements;
 				DEVELOPMENT_TEAM = E84FFPF9H3;
 				INFOPLIST_FILE = socialBishux/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -10,6 +10,8 @@ import UIKit
 //MARK:- 1. import login kit of facebook and Firebase
 import FBSDKLoginKit
 import Firebase
+import SwiftKeychainWrapper
+
 
 class SignInVC: UIViewController {
 
@@ -22,11 +24,17 @@ class SignInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            dismiss(animated: true, completion: nil)
+            performSegue(withIdentifier: "goToFeed", sender: nil)
+            print("BISHR: Key exists!")
+        }
+        
     }
 
     
@@ -44,6 +52,8 @@ class SignInVC: UIViewController {
                 print("BISHR: done auth with facebook!")
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 self.firebaseAuth(credential)
+               // self.completedSignin(id: user.uid)
+
             }
         }
     }
@@ -56,6 +66,9 @@ class SignInVC: UIViewController {
                 print("BISHR: cannot auth with firebase - \(error)")
             } else {
                 print("BISHR: done auth with firebase!")
+                if let user = user {
+                    self.completedSignin(id: user.uid)
+                }
             }
         })
     }
@@ -66,10 +79,17 @@ class SignInVC: UIViewController {
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
                     print("BISHR: done auth EMAIL USER with firebase!")
+                    if let user = user {
+                        self.completedSignin(id: user.uid)
+                    }
+
                 } else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
                         if error == nil {
                             print("BISHR: DONE create EMAIL USER with firebase!")
+                            if let user = user {
+                                self.completedSignin(id: user.uid)
+                            }
                         } else {
                             print("BISHR: unable to create EMAIL USER with firebase!")
                         }
@@ -77,6 +97,14 @@ class SignInVC: UIViewController {
                 }
             })
         }
+        
+    }
+    
+    func completedSignin(id: String) {
+        
+        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("BISHR: DATA stored into keychain successfully - \(keychainResult)")
+        performSegue(withIdentifier: "goToFeed", sender: nil)
         
     }
     
