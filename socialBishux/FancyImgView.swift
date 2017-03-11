@@ -1,5 +1,5 @@
 //
-//  FancyView.swift
+//  FancyImgView.swift
 //  socialBishux
 //
 //  Created by Bishr Nebras AlAbbadi on 3/11/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FancyView: UIView {
+class FancyImgView: UIImageView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,5 +20,6 @@ class FancyView: UIView {
         layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         layer.cornerRadius = 3.0
     }
+    
 
 }

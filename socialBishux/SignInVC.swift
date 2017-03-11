@@ -104,6 +104,7 @@ class SignInVC: UIViewController {
         
         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("BISHR: DATA stored into keychain successfully - \(keychainResult)")
+        dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "goToFeed", sender: nil)
         
     }

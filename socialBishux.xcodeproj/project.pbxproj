@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A45369A71E73FD9300FF72E7 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45369A61E73FD9300FF72E7 /* FeedVC.swift */; };
+		A45369A91E74120700FF72E7 /* FancyImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45369A81E74120700FF72E7 /* FancyImgView.swift */; };
 		A4C90D811E72C825004A9445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C90D801E72C825004A9445 /* AppDelegate.swift */; };
 		A4C90D831E72C825004A9445 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C90D821E72C825004A9445 /* SignInVC.swift */; };
 		A4C90D861E72C825004A9445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C90D841E72C825004A9445 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		0C6B87718D17A791DB079C5D /* Pods_socialBishux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialBishux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45369A51E73F97E00FF72E7 /* socialBishux.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = socialBishux.entitlements; sourceTree = "<group>"; };
 		A45369A61E73FD9300FF72E7 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		A45369A81E74120700FF72E7 /* FancyImgView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyImgView.swift; sourceTree = "<group>"; };
 		A4C90D7D1E72C825004A9445 /* socialBishux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = socialBishux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C90D801E72C825004A9445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4C90D821E72C825004A9445 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				A4C90D9C1E73D2CC004A9445 /* FancyButton.swift */,
 				A4C90D9E1E73D4F4004A9445 /* FancyField.swift */,
 				A4C90DA01E73D800004A9445 /* FancyButtonRound.swift */,
+				A45369A81E74120700FF72E7 /* FancyImgView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4C90D9F1E73D4F4004A9445 /* FancyField.swift in Sources */,
+				A45369A91E74120700FF72E7 /* FancyImgView.swift in Sources */,
 				A4C90D831E72C825004A9445 /* SignInVC.swift in Sources */,
 				A4C90D811E72C825004A9445 /* AppDelegate.swift in Sources */,
 				A4C90D981E73CF53004A9445 /* FancyView.swift in Sources */,

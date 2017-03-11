@@ -18,8 +18,8 @@ class FeedVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-  
-    @IBAction func signOut(_ sender: Any) {
+    @IBAction func signOutTapped(_ sender: Any) {
+      
         do {
             try FIRAuth.auth()?.signOut()
             print("BISHR: Signed out from firebase Successfully! :)")
@@ -31,6 +31,8 @@ class FeedVC: UIViewController {
             print("BISHR: Keychain removed !")
             dismiss(animated: true, completion: nil)
         }
+        
+        
     }
-
+  
 }
