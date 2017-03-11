@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A40D8A1E1E7468B3003F4D06 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40D8A1D1E7468B3003F4D06 /* Post.swift */; };
 		A45369A71E73FD9300FF72E7 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45369A61E73FD9300FF72E7 /* FeedVC.swift */; };
 		A45369A91E74120700FF72E7 /* FancyImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45369A81E74120700FF72E7 /* FancyImgView.swift */; };
 		A45369AB1E741A7E00FF72E7 /* postCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45369AA1E741A7E00FF72E7 /* postCell.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		0C6B87718D17A791DB079C5D /* Pods_socialBishux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialBishux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A40D8A1D1E7468B3003F4D06 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A45369A51E73F97E00FF72E7 /* socialBishux.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = socialBishux.entitlements; sourceTree = "<group>"; };
 		A45369A61E73FD9300FF72E7 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		A45369A81E74120700FF72E7 /* FancyImgView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyImgView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		A4C90D941E72CAC4004A9445 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A40D8A1D1E7468B3003F4D06 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				A4C90D9F1E73D4F4004A9445 /* FancyField.swift in Sources */,
 				A45369A91E74120700FF72E7 /* FancyImgView.swift in Sources */,
 				A4C90D831E72C825004A9445 /* SignInVC.swift in Sources */,
+				A40D8A1E1E7468B3003F4D06 /* Post.swift in Sources */,
 				A4C90D811E72C825004A9445 /* AppDelegate.swift in Sources */,
 				A4C90D981E73CF53004A9445 /* FancyView.swift in Sources */,
 				A4A965751E744391006F6124 /* DataService.swift in Sources */,
