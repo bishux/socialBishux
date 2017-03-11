@@ -28,6 +28,18 @@ class postCell: UITableViewCell {
         // Initialization code
         
     }
+    
+    
+    func configureCell(postData: Post) {
+        
+        caption.text = postData.text
+        likesLbl.text = "\(postData.likes)"
+      //  postImg.image = UIImage(data: Data(URL(string: postData.imgURL)))
+        
+        
+    }
+    
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
