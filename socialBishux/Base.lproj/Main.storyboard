@@ -205,12 +205,16 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fdn-6Q-iMC">
                                         <rect key="frame" x="8" y="8" width="343" height="49"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="qXu-Gs-4A4" customClass="FancyImgView" customModule="socialBishux" customModuleProvider="target">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="qXu-Gs-4A4" customClass="FancyImgView" customModule="socialBishux" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="KpX-P1-Oq5"/>
                                                     <constraint firstAttribute="width" constant="49" id="gPp-wL-GPh"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Um9-KR-kXK" appends="YES" id="A7d-cf-rm7"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Just SAY IT !" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0qh-aG-3ED" customClass="FancyField" customModule="socialBishux" customModuleProvider="target">
                                                 <rect key="frame" x="57" y="0.0" width="229" height="49"/>
@@ -364,10 +368,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imgAdd" destination="qXu-Gs-4A4" id="00N-GT-vL7"/>
                         <outlet property="tableFeed" destination="WOi-U1-khS" id="cjj-dr-HcD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HyN-sg-87V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Um9-KR-kXK">
+                    <connections>
+                        <action selector="addImgTapped:" destination="5er-aa-Yxl" id="uTO-tz-bGX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="863.20000000000005" y="38.23088455772114"/>
         </scene>

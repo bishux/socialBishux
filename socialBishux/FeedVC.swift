@@ -10,12 +10,14 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class FeedVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
+class FeedVC: UIViewController, UITableViewDelegate,UITableViewDataSource, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     @IBOutlet weak var tableFeed: UITableView!
+    @IBOutlet weak var imgAdd: FancyImgView!
     
     
     var posts = [Post]()
+    var imgPicker: UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,9 @@ class FeedVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
         tableFeed.delegate = self
         tableFeed.dataSource = self
         
+        imgPicker = UIImagePickerController()
+        imgPicker.allowsEditing = true
+        imgPicker.delegate = self
         
         DataService.DS.REF_POSTS.observe(.value, with: { (snapshot) in
             
@@ -44,6 +49,13 @@ class FeedVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            imgAdd.image = image
+        }
+        
+        imgPicker.dismiss(animated: true, completion: nil)
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -83,5 +95,11 @@ class FeedVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
         
         
     }
+    
+    @IBAction func addImgTapped(_ sender: Any) {
+        print("BISHR: tapped")
+        present(imgPicker, animated: true, completion: nil)
+    }
+    
   
 }
