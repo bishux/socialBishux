@@ -67,8 +67,8 @@ class SignInVC: UIViewController {
             } else {
                 print("BISHR: done auth with firebase!")
                 if let user = user {
-                    self.completedSignin(id: user.uid)
-                }
+                    let userData = ["provider": credential.provider]
+                    self.completedSignin(id: user.uid, userData: userData)                }
             }
         })
     }
@@ -80,7 +80,8 @@ class SignInVC: UIViewController {
                 if error == nil {
                     print("BISHR: done auth EMAIL USER with firebase!")
                     if let user = user {
-                        self.completedSignin(id: user.uid)
+                        let userData = ["provider": user.providerID]
+                        self.completedSignin(id: user.uid, userData: userData)
                     }
 
                 } else {
@@ -88,7 +89,8 @@ class SignInVC: UIViewController {
                         if error == nil {
                             print("BISHR: DONE create EMAIL USER with firebase!")
                             if let user = user {
-                                self.completedSignin(id: user.uid)
+                                let userData = ["provider": user.providerID]
+                                self.completedSignin(id: user.uid, userData: userData)
                             }
                         } else {
                             print("BISHR: unable to create EMAIL USER with firebase!")
@@ -100,7 +102,9 @@ class SignInVC: UIViewController {
         
     }
     
-    func completedSignin(id: String) {
+    func completedSignin(id: String, userData: Dictionary<String, String >) {
+        
+        DataService.DS.FirebaseDBUser(uid: id, userData: userData)
         
         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("BISHR: DATA stored into keychain successfully - \(keychainResult)")
