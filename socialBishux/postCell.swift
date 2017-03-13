@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class postCell: UITableViewCell {
     
@@ -21,30 +22,31 @@ class postCell: UITableViewCell {
         super.layoutSubviews()
         self.caption.setContentOffset(CGPoint.zero, animated: false)
     }
+  
     
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configureCell(post: Post, img: UIImage? = nil) {
+//        self.post = post
         
+        self.caption.text = post.text
+        self.likesLbl.text = "\(post.likes)"
+        
+        if img != nil {
+            self.postImg.image = img
+        } else {
+            let ref = FIRStorage.storage().reference(forURL: post.imgURL)
+            ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                if error != nil {
+                    print("JESS: Unable to download image from Firebase storage")
+                } else {
+                    print("JESS: Image downloaded from Firebase storage")
+                    if let imgData = data {
+                        if let img = UIImage(data: imgData) {
+                            self.postImg.image = img
+                            FeedVC.imageCache.setObject(img, forKey: post.imgURL as NSString)
+                        }
+                    }
+                }
+            })
+        }
     }
-    
-    
-    func configureCell(postData: Post) {
-        
-        caption.text = postData.text
-        likesLbl.text = "\(postData.likes)"
-      //  postImg.image = UIImage(data: Data(URL(string: postData.imgURL)))
-        
-        
-    }
-    
-    
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
